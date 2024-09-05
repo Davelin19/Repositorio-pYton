@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Notas</title>
+</head>
+<body>
+    <h1>Cálculo de Notas</h1>
+    <form action="/formulario2" method="POST">
+        <label for="nota">Ingrese su nota:</label>
+        <input type="number" name="nota" required>
+        <button type="submit">Calcular</button>
+    </form>
+    {% if error_message %}
+        <div class="error">{{ error_message }}</div>
+    {% elif mensaje is not none %}
+        <div class="resultado">Su calificación es: {{ mensaje }}</div>
+    {% endif %}
+
+    <br>
+    <br>
+    <button><a href="http://127.0.0.1:5000/">Inicio</a></button> 
+</body>
